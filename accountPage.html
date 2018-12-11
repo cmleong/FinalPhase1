@@ -1,0 +1,154 @@
+<!Doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+	</head>
+	<body>
+		
+		
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="#">Big Pharma</a>
+			</div>
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#">About Us</a></li>
+			  <li><a href="#">The Product</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+			  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
+			  <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+			  <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			</ul>
+		  </div>
+		</nav>
+		
+		<div>
+			<h4 id = "login">
+				
+			</h4>
+		</div>
+		
+		<center><a href = "login.html"><button type="button" class="btn btn-primary" >Go Back to Login</button></a></center>
+		
+		
+		
+		
+		<!-- Please enter your html code below this -->
+		
+		<div class="jumbotron">
+		<center> <h1>Account Maintenance</h1> </center>
+		</div>
+		
+		<div>
+			<center> <h4 id = "userStatus"> </h4> </center>
+		</div>
+		
+		<div>
+			<center><h4 id = "pasStatus"> </h4></center>
+		</div>
+		
+		<div>
+		<center><h3> Enter a new Password Here: </h3> </center>
+		</div>
+		
+		<div class="container">
+		<div class="row">
+			<div class="col-sm">
+				<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">New Password</span>
+						</div>
+						<input id = "changePass" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+				</div>
+				<button id="changeBtn" type="button" class="btn btn-success">Change</button>
+			</div>
+		</div>
+		
+		
+		<script>
+			$(document).ready( function() {
+			
+			
+			
+			if (document.cookie == '')
+			{
+				document.getElementById("login").innerHTML = "Hello, Please Sign In";
+			}
+			else
+			{
+				var theCookie = document.cookie;
+				var splitted = theCookie.split("=");
+				document.getElementById("login").innerHTML = "Welcome, " + splitted[0];
+			}
+				
+			//Please enter your code below this.
+			
+				var theCookie2 = document.cookie;
+				var splitted = theCookie2.split("=");
+				document.getElementById("userStatus").innerHTML = "Your Username: " + splitted[0];
+				document.getElementById("pasStatus").innerHTML = "YOUR PASSWORD: " + splitted[1];
+			
+			
+			
+			
+			
+			
+			$("#changeBtn").click(function()
+				{
+				 
+					
+				
+				
+				    var getValueNewPass = document.getElementById("changePass").value;
+					
+					var getStatus = document.getElementById("userStatus").innerHTML;
+					console.log(getStatus);
+					var statusSplit = getStatus.split(":");
+					var oldPass = statusSplit[1];
+					
+					var cookies = document.cookie;
+					var colonSplit = cookies.split("; ");
+					for (var i = 0; i<colonSplit.length; i++)
+					{
+						var equalsSplit = colonSplit[i].split("=");
+						deleteCookie(equalsSplit[0]);
+					}
+					
+					setCookie(oldPass, getValueNewPass, 30);
+					location = location;
+				
+				
+				
+				});
+			
+			
+			function deleteCookie(cname) 
+			{
+				var d = new Date(); //Create an date object
+				d.setTime(d.getTime() - (1000*60*60*24)); //Set the time to the past. 1000 milliseonds = 1 second
+				var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+				window.document.cookie = cname+"="+"; "+expires + ";path=/;";//Set the cookie with name and the expiration date
+			 
+			}
+			
+			function setCookie(cname,cvalue,exdays) 
+			{
+				var d = new Date();
+				d.setTime(d.getTime() + (exdays*24*60*60*1000));
+				var expires = "expires=" + d.toGMTString();
+				document.cookie = cname+"="+cvalue+"; "+expires + ";path=/;";
+			}
+			
+			});
+		</script>
+	</body>
+	
+</html>

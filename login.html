@@ -1,0 +1,214 @@
+<!Doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	
+
+	
+		<div class="jumbotron">
+		<center> <h1>Welcome to the login page!</h1> </center>
+		<center><a href = "homepage.html"><button  type="button" class="btn btn-success" >HomePage</button></a></center>
+		<center> <h3>Please Enter your credentials:</h3> </center>
+		<center> <h4 id = "current"> </h4> </center>
+		
+		</div>
+		
+		
+		
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">
+				<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">Username</span>
+						</div>
+						<input id = "inputUser" type="text" class="form-control" placeholder="e.g. Admin" aria-label="e.g. Admin" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">Password</span>
+						</div>
+						<input id = "passwordUser" type="text" class="form-control" placeholder="Please do not use a real password here" aria-label="Please do not use a real password here" aria-describedby="basic-addon1">
+				</div>
+				
+				<h4> Warning: DO NOT HIT THE LOGIN BUTTON MULTIPLE TIMES! Hit the logout button before entering another username and password. </h4>
+				
+				
+				<button id="loginBtn" type="button" class="btn btn-success" data-toggle = "modal" data-target = '#exampleModal'>Login</button>
+				<button id="eraseBtn" type="button" class="btn btn-danger" >Log out</button>
+				
+				
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel"></h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div id = "modalThing" class="modal-footer">
+			<button id= "closeBtn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			
+			
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<center><a href = "profile.html"><button id="Butt" type="button" class="btn btn-primary" data-toggle = "modal" >Go to Profile</button></a></center>
+	<script>
+		$(document).ready( function() {
+		console.log(document.cookie);
+		if (document.cookie == '')
+			{
+				document.getElementById("current").innerHTML = "Hello, Please Sign In";
+			}
+		else
+		{
+			var theCookie = document.cookie;
+			var splitted = theCookie.split("=");
+			document.getElementById("current").innerHTML = "Currently Logged in: " + splitted[0];
+		}
+		
+		
+		if (document.getElementById("current").innerHTML == "Hello, Please Sign In")
+		{
+			var btn =  document.getElementById("Butt");
+			btn.style.visibility = "hidden";
+			
+		}
+		else
+		{
+			var btn = document.getElementById("loginBtn");
+			btn.style.visibility = "visible";
+			
+		}
+		
+		
+		var inputUserContent1 = document.getElementById("inputUser").value;
+		var inputPaswordContent1 = document.getElementById("passwordUser").value;
+			
+			$("#loginBtn").click(function()
+				{
+					var inputUserContent1 = document.getElementById("inputUser").value;
+					var inputPaswordContent1 = document.getElementById("passwordUser").value;
+			
+					
+					
+					
+					if (inputUserContent1 == "" || inputPaswordContent1 == "")
+					{
+						document.getElementById("exampleModalLabel").innerHTML = "Please enter a username and password";
+						
+						
+					}
+					else
+					{
+						document.getElementById("exampleModalLabel").innerHTML = "Welcome, " + inputUserContent1 + " !";
+						setCookie(inputUserContent1, inputPaswordContent1, 30);
+					}
+					
+					
+					
+					
+					
+				});
+				
+				$("#eraseBtn").click(function()
+				{
+					var cookies = document.cookie;
+					var colonSplit = cookies.split("; ");
+					for (var i = 0; i<colonSplit.length; i++)
+					{
+						var equalsSplit = colonSplit[i].split("=");
+						deleteCookie(equalsSplit[0]);
+					}
+					location = location;
+				});
+				
+				
+				$("#closeBtn").click(function()
+				{
+					location = location;
+				});
+				
+		function checkCookie() 
+		{
+			var user=getCookie(inputUserContent1);
+			console.log("Hi");
+			
+			if (user != "") 
+			{
+				console.log("you have a cookie already");
+			} 
+			else 
+			{
+			   user = inputPaswordContent1;//change this
+			   if (user != "" && user != null) 
+			   {
+				   setCookie(inputUserContent1, user, 30);
+			   }
+			}
+		}
+		
+		function getCookie(cname) 
+		{
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0; i<ca.length; i++) 
+			{
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1);
+				if (c.indexOf(name) == 0) 
+				{
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		
+		function setCookie(cname,cvalue,exdays) 
+		{
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays*24*60*60*1000));
+			var expires = "expires=" + d.toGMTString();
+			document.cookie = cname+"="+cvalue+"; "+expires + ";path=/;";
+		}
+		
+		function deleteCookie(cname) 
+		{
+			var d = new Date(); //Create an date object
+			d.setTime(d.getTime() - (1000*60*60*24)); //Set the time to the past. 1000 milliseonds = 1 second
+			var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+			window.document.cookie = cname+"="+"; "+expires + ";path=/;";//Set the cookie with name and the expiration date
+		 
+		}
+	
+		
+		});
+	</script>
+	</body>
+
+
+
+
+
+
+
+
+
+
+</html>

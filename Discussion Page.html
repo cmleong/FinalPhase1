@@ -1,0 +1,148 @@
+<html>
+	<head>
+  <title>Big Pharma Discussion Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="homepage.html">Big Pharma</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li class = "active"><a href="Discussion Page.html">Discussion</a></li>
+	  <!--<li><a href="AccountOrders.html">Orders</a></li>-->
+	  <li><a href="Privacy Policy Page.html">Privacy</a></li>
+	  <li><a href="TermsOfUse.html">Terms</a></li>
+	  <!--<li><a href="accountPage.html">Account</a></li>-->
+	  <!--<li><a href="conformation.html">conformation</a></li>-->
+	  <li><a href="grid.html">Products</a></li>
+	  <li><a href="location.html">Location</a></li>
+	  <li><a href="science.html">Science</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+	  <li><a href="ContactPage.html"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
+      <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>  
+
+<div>
+	<h4 id = "login">
+		
+	</h4>
+</div>
+		
+
+<script>
+
+			$(document).ready( function() {
+			
+			
+			
+			if (document.cookie == '')
+			{
+				document.getElementById("login").innerHTML = "Hello, Please Sign In";
+			}
+			else
+			{
+				var theCookie = document.cookie;
+				var splitted = theCookie.split("=");
+				document.getElementById("login").innerHTML = "Welcome, " + splitted[0];
+			}
+				
+			//Please enter your code below this.
+				function submitFunction() {
+			document.getElementById("demo").innerHTML = "Hello World";
+				}	
+			
+			});
+		
+	
+</script>
+
+<div>
+	<h1>
+	<br><b>Big Pharma Discussion Page</b>
+	</h1>
+	
+	<h2>
+	Start a discussion here
+	</h2>
+	
+		<div class="Privacy Policy">
+			<div class="col-sm-15 col-md-4">
+				<div class="thumbnail">
+					<div class="caption">	
+						<textarea type="text" onfocus="this.value=''" rows="4" cols="50" id="textarea">
+Type here!
+						</textarea><br>
+						
+						<buttonSumbit onclick="document.getElementById('textarea').value = ''" type="button" class="btn btn-primary" data-toggle="modal" data-target="#submit">Submit</buttonSumbit>
+							<div id="submit" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Congratulations!</h4>
+									</div>
+										<div class="modal-body">
+										<p>You successfully made a comment. Click the Exit button or the x on the right-hand corner to return to the Discussion Page.</p>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
+										</div>
+								</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<b1><a href="homepage.html" class="btn btn-primary" role="button">Return to Home Page</a></b1>
+
+<h3>
+Comment Section
+</h3>
+
+		<div class="Comment 1">
+			<div class="col-sm-15 col-md-3">
+				<img src="https://s3.us-east-2.amazonaws.com/cis3110final/Male+Comment+Pic.jpg" alt="..."  width="100" height="100" align="left">
+				<div class="thumbnail">
+<b>Noctis Lucis Caelum</b><br><br>
+I love this site. I can get all the medication I need at a click of a button. Again, what a wonderful site!
+				</div>
+			</div>
+		</div>
+		
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+		
+		<div class="Comment 2">
+			<div class="col-sm-15 col-md-3">
+				<img src="https://s3.us-east-2.amazonaws.com/cis3110final/Female+Comment+Pic.jpg" alt="..."  width="100" height="100" align="left">
+				<div class="thumbnail">
+<b>Ikora Rey</b><br><br>
+This site is amazing and all the medicine on the site is relatively cheap. You should buy from this site.
+				</div>
+			</div>
+		</div>
+</html>

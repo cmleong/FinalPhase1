@@ -1,0 +1,122 @@
+<!Doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		
+	</head>
+	
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="homepage.html">Big Pharma</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li><a href="Discussion Page.html">Discussion</a></li>
+	  <!--<li><a href="AccountOrders.html">Orders</a></li>-->
+	  <li><a href="Privacy Policy Page.html">Privacy</a></li>
+	  <li><a href="TermsOfUse.html">Terms</a></li>
+	  <!--<li><a href="accountPage.html">Account</a></li>-->
+	  <!--<li><a href="conformation.html">conformation</a></li>-->
+	  <li><a href="grid.html">Products</a></li>
+	  <li><a href="location.html">Location</a></li>
+	  <li><a href="science.html">Science</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+	  <li><a href="ContactPage.html"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
+      <li class = "active"><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>  
+
+
+		
+	
+		
+		
+	<body>
+		<div>
+			<h4 id = "login">
+				
+			</h4>
+			
+		</div>
+		
+	<div class="jumbotron">
+		<center> <h1>Your Profile</h1> </center>
+	</div>	
+			
+		
+		
+		
+		
+		<!-- Please enter your html code below this -->
+		
+		<center> <h2 id= "e"> </h2></center>
+		</br>
+		<center> <img src = "default.jpg" width = "200" height = "200"> </img> </center>
+		</br>
+		<center><a href = "accountPage.html"><button id="Butt" type="button" class="btn btn-primary"> Manage Account </button></a></center>
+		<center><a href = "AccountOrders.html"><button id="Butts" type="button" class="btn btn-primary"> See Past Orders </button></a></center>
+		
+		<ul class="list-group">
+		  <li id = "list1" class="list-group-item"></li>
+		  <li id = "list2" class="list-group-item"></li>
+		</ul>
+		
+		
+		
+		
+		<script>
+			$(document).ready( function() {
+			
+			
+			
+			if (document.cookie == '')
+			{
+				document.getElementById("login").innerHTML = "Hello, Please Sign In";
+			}
+			else
+			{
+				var theCookie = document.cookie;
+				var splitted = theCookie.split("=");
+				document.getElementById("login").innerHTML = "Welcome, " + splitted[0];
+			}
+				
+			//Please enter your code below this.
+			var theCookie2 = document.cookie;
+			var splitted = theCookie2.split("=");
+			document.getElementById("list1").innerHTML = "Your Username :" + splitted[0];
+			document.getElementById("list2").innerHTML = "Your Password :" + splitted[1];
+			document.getElementById("e").innerHTML = splitted[0];
+			
+			if (document.getElementById("login").innerHTML == "Hello, Please Sign In")
+			{
+				var btn =  document.getElementById("Butt");
+				var btn2 = document.getElementById("Butts");
+				btn.style.visibility = "hidden";
+				btn2.style.visibility = "hidden";
+			}
+			else
+			{
+				var btn = document.getElementById("Butt");
+				var btn2 = document.getElementById("Butts");
+				btn.style.visibility = "visible";
+				btn2.style.visibility = "visible";
+				
+			}
+			
+				
+			
+			});
+		</script>
+	</body>
+	
+</html>

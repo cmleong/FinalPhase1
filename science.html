@@ -1,0 +1,95 @@
+<html>
+	<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="homepage.html">Big Pharma</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li><a href="Discussion Page.html">Discussion</a></li>
+	  <!--<li><a href="AccountOrders.html">Orders</a></li>-->
+	  <li><a href="Privacy Policy Page.html">Privacy</a></li>
+	  <li><a href="TermsOfUse.html">Terms</a></li>
+	  <!--<li><a href="accountPage.html">Account</a></li>-->
+	  <!--<li><a href="conformation.html">conformation</a></li>-->
+	  <li><a href="grid.html">Products</a></li>
+	  <li><a href="location.html">Location</a></li>
+	  <li class = "active"><a href="science.html">Science</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+	  <li><a href="ContactPage.html"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
+      <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>  
+
+<div>
+	<h4 id = "login">
+		
+	</h4>
+</div>
+
+<script>
+			$(document).ready( function() {
+			
+			
+			
+			if (document.cookie == '')
+			{
+				document.getElementById("login").innerHTML = "Hello, Please Sign In";
+			}
+			else
+			{
+				var theCookie = document.cookie;
+				var splitted = theCookie.split("=");
+				document.getElementById("login").innerHTML = "Welcome, " + splitted[0];
+			}
+				
+			//Please enter your code below this.
+			
+			
+			});
+</script>
+        
+<div class="container">
+  <div class="jumbotron">
+      <center> <h1>Learn What's in Your Meds</h1> 
+    <img src="https://s3-us-west-2.amazonaws.com/3110phase6/img7.png">
+    
+    <h2>Satori: weed</h2>
+    <p>  Dark Chocolate (Cacao Beans, Sugar, Cocoa Butter, Soy Lecithin, Vanilla Flavor), Blueberries (Dried Blueberries, Cane Sugar, Sunflower Oil), Organic Raspberry Powder, Cocoa Powder, Confectioner’s Sugar, Tapioca Dextrin, Confectioner’s Glaze, Cannabis Oil</p>
+    <br>
+    <h2>Zyrtec 24 Hour Allergy</h2>
+    <p> Active ingredient (in each tablet): Cetirizine HCl 10 mg (antihistamine) Inactive ingredients: colloidal silicon dioxide, croscarmellose sodium, hypromellose, lactose monohydrate, magnesium stearate, microcrystalline cellulose, polyethylene glycol, titanium dioxide </p>
+    <br>
+    <h2>Advil: Pain Reliever/Fever Reducer Ibuprofen Tablets</h2>
+          <p> Active Ingredients: Ibuprofen - 200 mg Nonsteroidal Anti-Inflmmatory Drug</p>
+<p>Inactive Ingredients: Acetylated Monoglycerides, Colloidal Silicon Dioxide, Corn Starch, Croscarmellose Sodium, Methylparaben, Microcrystalline Cellulose, Pharmaceutical Glaze, Pharmaceutical Ink, Povidone, Pregelatinized Starch, Propylparaben, Sodium Benzoate, Sodium Lauryl Sulfate, Stearic Acid, Sucrose, Synthetic Iron Oxide, Titanium Dioxide, White Wax</p>
+    <br>
+    <h2>Tylenol Extra Strenght: Pain Killer and Fever Reducer Caplets</h2>
+    <p> Active ingredient: Acetaminophen 500 mg (in each caplet)</p>
+    <p> Inactive ingredients: carnauba wax*, corn starch*, FD&C red no. 40 aluminum lake, hypromellose, magnesium stearate, modified starch*, polyethylene glycol*, powdered cellulose, pregelatinized starch, propylene glycol, shellac, sodium starch glycolate, titanium dioxide</p>
+    <br>
+     <h2>Robitussin: Cough Syrup</h2>
+    <p>Active Ingredients: Guaifenesin. USP 400mg;Dextromethorphan HBr, USP 20mg</p>
+    <p> Inactive Ingredients: Inactive IngredientsAnhydrous Citric Acid, Carboxymethylcellulose Sodium, FD&C Blue No. 1, FD&C Red No. 40, Glycerin, Liquid Glucose, Menthol, Natural and Artificial Flavors, Polyethylene Glycol, Propylene Glycol, Purified Water, Sodium Benzoate, Sodium Citrate, Sucralose, Triacetin, Xanthan Gum</p>
+    <br>
+    <h2> NyQuil Cold and Flu</h2>
+    <p> Active Ingredients (In each 30 mL Dose Cup): Acetaminophen 650 mg (Pain Reliever/Fever Reducer), Dextromethorphan HBr 30 mg (Cough Suppressant), Doxylamine Succinate 12.5 mg (Antihistamine).</p>
+<p> Inactive Ingredients: Acesulfame Potassium, Alcohol, Citric Acid, FD&C Blue No. 1, FD&C Red No. 40, Flavor, High Fructose Corn Syrup, Polyethylene Glycol, Propylene Glycol, Purified Water, Saccharin Sodium, Sodium Citrate.</p>
+  <div>
+ 
+</div>
+
+ 
+      </center>
+</div>
