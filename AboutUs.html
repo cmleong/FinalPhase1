@@ -10,23 +10,38 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   
-  <nav class="navbar navbar-inverse">
+ <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Big Pharma</a>
+      <a class="navbar-brand" href="homepage.html">Big Pharma</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">The Product</a></li>
+      <li><a href="homepage.html">Home</a></li>
+      <li class = "active"><a href="AboutUs.html">About Us</a></li>
+      <li><a href="Discussion Page.html">Discussion</a></li>
+	  <!--<li><a href="AccountOrders.html">Orders</a></li>-->
+	  <li><a href="Privacy Policy Page.html">Privacy</a></li>
+	  <li><a href="TermsOfUse.html">Terms</a></li>
+	  <!--<li><a href="accountPage.html">Account</a></li>-->
+	  <!--<li><a href="conformation.html">conformation</a></li>-->
+	  <li><a href="grid.html">Products</a></li>
+	  <li><a href="location.html">Location</a></li>
+	  <li><a href="science.html">Science</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-	  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	  <li><a href="ContactPage.html"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
+      <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
-</nav>
+</nav>  
+
+<div>
+	<h4 id = "login">
+		
+	</h4>
+</div>
+		
 
 </head>
 <body>
@@ -378,6 +393,28 @@
     </div>
   </div>
 </div>
+
+<script>
+			$(document).ready( function() {
+			
+			
+			
+			if (document.cookie == '')
+			{
+				document.getElementById("login").innerHTML = "Hello, Please Sign In";
+			}
+			else
+			{
+				var theCookie = document.cookie;
+				var splitted = theCookie.split("=");
+				document.getElementById("login").innerHTML = "Welcome, " + splitted[0];
+			}
+				
+			//Please enter your code below this.
+			
+			
+			});
+</script>
 
 </body>
 </html>

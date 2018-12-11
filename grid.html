@@ -9,26 +9,54 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Big Pharma</a>
+      <a class="navbar-brand" href="homepage.html">Big Pharma</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">The Product</a></li>
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li><a href="Discussion Page.html">Discussion</a></li>
+	  <!--<li><a href="AccountOrders.html">Orders</a></li>-->
+	  <li><a href="Privacy Policy Page.html">Privacy</a></li>
+	  <li><a href="TermsOfUse.html">Terms</a></li>
+	  <!--<li><a href="accountPage.html">Account</a></li>-->
+	  <!--<li><a href="conformation.html">conformation</a></li>-->
+	  <li class = "active"><a href="grid.html">Products</a></li>
+	  <li><a href="location.html">Location</a></li>
+	  <li><a href="science.html">Science</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-	  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	  <li><a href="ContactPage.html"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
+      <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
-</nav>
+</nav>  
+<div>
+	<h4 id = "login">
+		
+	</h4>
+</div>
+		
+	
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script>
 	$(document).ready( function() {
+	
+	if (document.cookie == '')
+			{
+				document.getElementById("login").innerHTML = "Hello, Please Sign In";
+			}
+			else
+			{
+				var theCookie = document.cookie;
+				var splitted = theCookie.split("=");
+				document.getElementById("login").innerHTML = "Welcome, " + splitted[0];
+			}
+			
 		var pics = ["pic1.jpg","pic2.jpg","pic3.jpg","pic4.jpg","pic5.jpg","pic6.jpg"];
 		var caption = ["Satori Editible","Tylenol","Advil","Robitussin","Nyquil","Zyrtec"];
 		var desc = ["A hybird that has since become one of Mandala Seed's most sought after strains. A Sativa-dominant hybrid that within a first few minutes a clear but strong cerebral high elevates moods. It tends to ease the moind, opening it up for creativity and concentration.The THC range for Satori is between 23 and 28 percent. This product can be purchased as a oil or as an editable",
