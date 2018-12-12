@@ -1,0 +1,49 @@
+#backgroundColor
+{
+	background-color: white;
+}
+.divCSS
+{
+	width: 100%;
+	height: auto;
+	padding-top: 40px;
+	
+	
+}
+.imgCSS
+{
+	width: 100%;
+	height: auto;
+	
+}
+
+.captionCSS
+{
+	text-align: center;
+	color: black;
+}
+
+.containMe
+{
+	display: grid;
+	grid-gap: 5px;
+  grid-template-columns: 33% 33% 33%;
+  padding: 10px;
+}
+
+.box
+{
+	background-color: grey;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 3px;
+	border: 3px;
+}
+
+.dropdown-menu-center 
+{
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+}
