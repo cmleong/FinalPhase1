@@ -12,11 +12,13 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script> 
   $( function() { 
+
     $("#u").click(function(){
         var h = "phase4.html"; 
         console.log(h);
         window.location.href = h;
     });
+
     var url = window.location.href;
     console.log("url = " + url);
     var x = breakUpURLParameters(url);
@@ -28,6 +30,10 @@
 	var h1 = document.createElement("h1");
 	var p = document.createElement("p");
 	var h2 = document.createElement("h2");
+	var p2 = document.createElement("p");
+	var h3 = document.createElement("h3");
+	var p3 = document.createElement("p3");
+	var h4 = document.createElement("h4");
 	var pDiv = document.createElement("div");
 	
 	pDiv.setAttribute("id","heart");
@@ -36,11 +42,23 @@
 	
 	var captionNode = document.createTextNode(decodeURI(x.search.caption));
 	var descNode = document.createTextNode(decodeURI(x.search.desc));
+	var directNode = document.createTextNode(decodeURI(x.search.directions));
+	var priceNode = document.createTextNode(decodeURI(x.search.price));
 	var titleNode = document.createTextNode(decodeURI("Description: "));
+	var titleNode2 = document.createTextNode(decodeURI("Directions: "));
+	var titleNode3 = document.createTextNode(decodeURI("Price: "));
+	
 	
 	h1.appendChild(captionNode);
 	p.appendChild(descNode);
 	h2.appendChild(titleNode);
+	p2.appendChild(directNode);
+	h3.appendChild(titleNode2);
+	p3.appendChild(priceNode);
+	h4.appendChild(titleNode3);
+	
+	
+	
 	pDiv.appendChild(h1);
 	
 	t.appendChild(pDiv);
@@ -48,8 +66,12 @@
 	t.appendChild(y);
 	t.appendChild(h2);
 	t.appendChild(p);
+	t.appendChild(h3);
+	t.appendChild(p2);
+	t.appendChild(h4);
+	t.appendChild(p3);
 	
-	if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic1.jpg') >= 0}).length) //for Cheese
+	if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic1.jpg') >= 0}).length) 
 			{
 				var heart = document.createElement("i");
 				heart.setAttribute("class", "fa fa-heart");
@@ -58,7 +80,7 @@
 				heartDiv.appendChild(heart);
 			}
 			
-	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic2.jpg') >= 0}).length) //for Mushroom
+	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic2.jpg') >= 0}).length) 
 			{
 				var heart = document.createElement("i");
 				heart.setAttribute("class", "fa fa-heart");
@@ -66,7 +88,8 @@
 				var heartDiv = document.getElementById("heart");
 				heartDiv.appendChild(heart);
 			}
-	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic3.jpg') >= 0}).length) //for Pineapple
+
+	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic3.jpg') >= 0}).length) 
 			{
 				var heart = document.createElement("i");
 				heart.setAttribute("class", "fa fa-heart");
@@ -75,7 +98,7 @@
 				heartDiv.appendChild(heart);
 			}
 			
-	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic4.jpg') >= 0}).length) //for sausage
+	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic4.jpg') >= 0}).length)
 			{
 				var heart = document.createElement("i");
 				heart.setAttribute("class", "fa fa-heart");
@@ -84,7 +107,7 @@
 				heartDiv.appendChild(heart);
 			}
 	
-	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic5.jpg') >= 0}).length) //for chocolate
+	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic5.jpg') >= 0}).length) 
 			{
 				var heart = document.createElement("i");
 				heart.setAttribute("class", "fa fa-heart");
@@ -93,10 +116,12 @@
 				heartDiv.appendChild(heart);
 			}
 	
+
     function breakUpURLParameters(url) {  
         var link = document.createElement('a');
         link.setAttribute('href', url);
         console.log("path variable is " + url);
+
         return {
             host:     link.hostname,  
             port:     link.port,      
@@ -105,13 +130,19 @@
             protocol: link.protocol   
         }
     }
+
   function mapMaker(search, preserveDuplicates) { 
       preserveDuplicates = preserveDuplicates || false;  
+
       var outputNoDupes = {};
       var returnableArray = [];  
+
       if(!search) throw new Error('mapMaker: your search input param is misformed?');
+
       search = search.split('?')[1];
+
       search = search.split('&');
+
       returnableArray = search.map(function(keyval){
                                    var out = {};
                                    keyval = keyval.split('=');
