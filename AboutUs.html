@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Us</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="homepage.html">Big Pharma</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="homepage.html">Home</a></li>
+      <li class = "active" ><a href="AboutUs.html">About Us</a></li>
+      <li><a href="Discussion Page.html">Discussion</a></li>
+	  <!--<li><a href="AccountOrders.html">Orders</a></li>-->
+	  <li><a href="Privacy Policy Page.html">Privacy</a></li>
+	  <li><a href="TermsOfUse.html">Terms</a></li>
+	  <!--<li><a href="accountPage.html">Account</a></li>-->
+	  <!--<li><a href="conformation.html">conformation</a></li>-->
+	  <li><a href="grid.html">Products</a></li>
+	  <li><a href="location.html">Location</a></li>
+	  <li><a href="science.html">Science</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+	  <li><a href="ContactPage.html"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
+      <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>  
+
+<div>
+		<h4 id = "login">
+			
+		</h4>
+</div>
+
+</head>
+<body>
+
+<div style = "background-color:grey" class="jumbotron">
+  <h1>About Us</h1>      
+  <p>Our pharmacy's goal is to help people better their health.</p>
+</div>
+
+<div class="About Us">
+  <div class="col-sm-15 col-md-15">
+    <div class="thumbnail">
+      <div class="caption">
+        <h1><b>Our Company</b></h3>
+	
+	<div class = "col-sm-6">
+	<p>
+	At Big Pharma, we share a clear purpose: helping people on their path to better health. Through our health services, plans and community pharmacists,
+	we’re pioneering a bold new approach to total health. Making quality care more affordable, accessible, simple and seamless, to not only help people get
+	well, but help them stay well in body, mind and spirit. Big Pharma Health’s extensive suite of assets positions us to play an important role in solving the cost,
+	quality and access issues in the evolving health care landscape. We work hard to develop a diverse workforce and provide a workplace that empowers all of
+	our colleagues, regardless of their age, ethnicity or background. We have a long history of supporting the communities where we do business by giving 5 
+	percent of our profit. We also volunteer our time and talent, partner with like-minded organizations to build stronger, safer, healthier communities, 
+	and invest in the development and well-being of our team members.
+	</p>
+	</div>
+    
+	<div class = "col-sm-6">
+	<p>
+	We believe diversity and inclusivity make teams and Big Pharma better. And we’ll live that belief as champions of a more inclusive society by creating a diverse
+	and inclusive work environment, cultivating an inclusive guest experience, and fostering equality in society. You’re our guest when you shop with us, so we
+	design every Big Pharma shopping experience to be the best you’ll ever have. From small-format stores that are right-sized and stocked for urban dwellers to an
+	award-winning iPhone app that lets you shop on the go, your Big Pharma shopping experience will be unique and memorable.
+	</P>
+	
+	<p>
+	We set high standards for your Big Pharma experience—where you shop with us and in our company halls. We aim to be a place where guests and team members
+	will always find more than they expect. Our purpose and beliefs set the stage, and day-to-day innovation, teamwork and community partnerships reflect who we are.
+	</P>
+	</div>
+	
+	
+	
+	<b1><a href="#" class="btn btn-primary" role="button">Return to Home Page</a></b1>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+			$(document).ready( function() {
+			
+			
+			
+			if (document.cookie == '')
+			{
+				document.getElementById("login").innerHTML = "Hello, Please Sign In";
+			}
+			else
+			{
+				var theCookie = document.cookie;
+				var splitted = theCookie.split("=");
+				document.getElementById("login").innerHTML = "Welcome, " + splitted[0];
+			}
+				
+			//Please enter your code below this.
+			
+			
+			});
+</script>
+</body>
+</html>
