@@ -9,54 +9,26 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-	
-<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="homepage.html">Big Pharma</a>
+      <a class="navbar-brand" href="#">Big Pharma</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="homepage.html">Home</a></li>
-      <li><a href="AboutUs.html">About Us</a></li>
-      <li><a href="Discussion Page.html">Discussion</a></li>
-	  <!--<li><a href="AccountOrders.html">Orders</a></li>-->
-	  <li><a href="Privacy Policy Page.html">Privacy</a></li>
-	  <li><a href="TermsOfUse.html">Terms</a></li>
-	  <!--<li><a href="accountPage.html">Account</a></li>-->
-	  <!--<li><a href="conformation.html">conformation</a></li>-->
-	  <li class = "active"><a href="grid.html">Products</a></li>
-	  <li><a href="location.html">Location</a></li>
-	  <li><a href="science.html">Science</a></li>
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">The Product</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-	  <li><a href="ContactPage.html"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
-      <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Contact Us</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
-</nav>  
-<div>
-	<h4 id = "login">
-		
-	</h4>
-</div>
-		
-	
+</nav>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script>
 	$(document).ready( function() {
-	
-	if (document.cookie == '')
-			{
-				document.getElementById("login").innerHTML = "Hello, Please Sign In";
-			}
-			else
-			{
-				var theCookie = document.cookie;
-				var splitted = theCookie.split("=");
-				document.getElementById("login").innerHTML = "Welcome, " + splitted[0];
-			}
-			
 		var pics = ["pic1.jpg","pic2.jpg","pic3.jpg","pic4.jpg","pic5.jpg","pic6.jpg"];
 		var caption = ["Satori Editible","Tylenol","Advil","Robitussin","Nyquil","Zyrtec"];
 		var desc = ["A hybird that has since become one of Mandala Seed's most sought after strains. A Sativa-dominant hybrid that within a first few minutes a clear but strong cerebral high elevates moods. It tends to ease the moind, opening it up for creativity and concentration.The THC range for Satori is between 23 and 28 percent. This product can be purchased as a oil or as an editable",
@@ -65,15 +37,22 @@
 					"Robitussin knows its never just a cough when you re coughing, you may be sick. Put your cold to bed and get fast, effective cough relief with Robitussin Adult Maximum Strength Nighttime Cough DM Max.",
 					"ZzzQuil, a non habit-forming nighttime sleep aid for when you just need a good night's sleep. From the makers of Vicks NyQuil. just for sleep.",
 					"Zyrtec Tablets relieve your worst allergy symptoms, indoor and out. With 10 milligrams of cetirizine hydrochloride per tablet, this prescription-strength allergy medicine provides 24 hours of relief from common symptoms of hay fever and other upper respiratory allergies: runny nose, sneezing, itchy, watery eyes, and itching of the nose or throat."];
-		var directions = [];
+		var directions = ["Take only what one needs. Do not take eat more than one item and with parents watching you. Do not eat and drive please.",
+					"Adults and children 12 years and over: Take 2 caplets every 6-hour while symptoms last; do not take more than 6 caplets in 24-hour, unless directed by a doctor; do not use for more than 10 days unless directed by a doctor.",
+					"Adults and children 12 years and over: Take 2 caplets every 6-hour while symptoms last; do not take more than 6 caplets in 24-hour, unless directed by a doctor; do not use for more than 10 days unless directed by a doctor.",
+					"Take once every 12 hours and with a cup of beer. In addition, eat a full nine-course meal before taking otherwise one runs the risk of dying.",
+					"Take only one dose per day (24 hours), use dose cup or tablespoon. Adults and children 12 years and over: 30mL (2 tablespoons) at bedtime if needed or as directed by a doctor. Children under 12 years: Do not use.",
+					"Adults and children 6 years and over: One 10mg tablet once daily; do not take more than one 10mg tablet in 24-hour."];
+		var price = ["$4.20 per bag","$3.50","$3.99","$8.99","$6.99","$11.99"];
 		
 		var gridDiv = document.createElement("div");
 		gridDiv.setAttribute("class","containMe");
 		document.body.appendChild(gridDiv);
 		
 		for(var i=0; i<pics.length; i++){
-			url= "https://s3-us-west-2.amazonaws.com/cmleongcis311/phase+2/" + pics[i];
-			var urlDetails = "productDetails.html?" + "img=" + url + "&" + "caption=" + caption[i] + "&" + "desc=" + desc[i]; //add directions here as well
+			url= "https://s3-us-west-2.amazonaws.com/cmleongcis311/phase+8/" + pics[i];
+			var urlDetails = "productDetails.html?" + "img=" + url + "&" + "caption=" + caption[i] + "&" + "desc=" + desc[i] + "&" + "directions=" + directions[i] + "&" + "price=" 
+			+ price[i]; 
 			var picDiv = document.createElement("div");
 			picDiv.setAttribute("class","divCSS");
 			
@@ -91,6 +70,12 @@
 			var showCaption = caption[i];
 			var node = document.createTextNode(showCaption);
 			
+			var showDirection = directions[i];
+			var node2 = document.createTextNode(showCaption);
+			
+			var showPrice = price[i];
+			var node3 = document.createTextNode(showCaption);
+			
 			var hCaption = document.createElement("h3");
 			hCaption.appendChild(node);
 			captionDiv.appendChild(hCaption);
@@ -98,6 +83,7 @@
 			var uniDiv = document.createElement("div");
 			uniDiv.setAttribute("class","box");
 			uniDiv.appendChild(captionDiv);
+
 			uniDiv.appendChild(picDiv); 
 			
 			gridDiv.appendChild(uniDiv);
